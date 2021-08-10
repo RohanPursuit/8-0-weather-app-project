@@ -26,7 +26,7 @@ The following is the rubric for this project. To get a full score, you must meet
 
 ### CSS
 
-- **Exemplary:** The web application looks very similar to, or more professional than, the screenshot. The application makes use of CSS Grid for all content structuring and uses appropriate CSS conventions. The design or layout goes above and beyond in some way.
+- **Exemplary:** The web application looks very similar to, or more professional then, the screenshot. The application makes use of CSS Grid for all content structuring and uses appropriate CSS conventions. The design or layout goes above and beyond in some way.
 
 - **Proficient:** The web application looks very similar to the screenshot. The application makes use of CSS Grid for all content structuring and uses appropriate CSS conventions.
 
