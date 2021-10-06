@@ -6,13 +6,7 @@ workflows:
     jobs:
       - cypress/run:
           post-steps:
-            - store_test_results:
-                path: ./reports/junit
             - store_artifacts:
                 path: cypress/videos
             - store_artifacts:
                 path: cypress/screenshots
-            - run:
-                name: Notify Test Results
-                command: node ./scripts/parseJunit.js $CIRCLE_PROJECT_REPONAME $SLACK_WEBHOOK_URL $CIRCLE_PR_USERNAME 
-                when: always
