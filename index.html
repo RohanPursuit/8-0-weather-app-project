@@ -4,24 +4,24 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
 		<header>
-			<title>Weather App</title>
 			<section>
-				<form>
+				<form class="top">
+					<h1>Weather App</h1>
 					<label for="">
 						Pick Location
 						<input type="text" placeholder="Location" />
 					</label>
-					<input type="submit" />
+					<input type="submit" value="Get Weather" />
 				</form>
 				<p>Choose a location to view the weather</p>
-				<aside>
-					Previous Search
-					<p>No previous searches</p>
-				</aside>
+				<aside class="history">Previous Searches</aside>
 			</section>
 		</header>
+		<main class="display"></main>
 	</body>
 </html>
