@@ -13,6 +13,6 @@ form {
 	grid-column: 2 / 6;
 }
 
-section p {
+main {
 	grid-column: 2 / 5;
 }

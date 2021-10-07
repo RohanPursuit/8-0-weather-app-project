@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Weather App</title>
 		<link rel="stylesheet" href="./style.css" />
+		<script defer src="./index.js"></script>
 	</head>
 	<body>
 		<header>
@@ -14,14 +15,14 @@
 					<h1>Weather App</h1>
 					<label for="">
 						Pick Location
-						<input type="text" placeholder="Location" />
+						<input type="text" placeholder="Location" name="search" />
 					</label>
 					<input type="submit" value="Get Weather" />
 				</form>
-				<p>Choose a location to view the weather</p>
+				<main class="display">Choose a location to view the weather</main>
 				<aside class="history">Previous Searches</aside>
 			</section>
 		</header>
-		<main class="display"></main>
+		<!-- <main class="display"></main> -->
 	</body>
 </html>
