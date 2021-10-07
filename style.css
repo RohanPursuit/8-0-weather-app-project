@@ -66,3 +66,7 @@ div section {
 .hidden {
 	display: none;
 }
+
+.block {
+	display: block;
+}
