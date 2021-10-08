@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {string} url 
+ * @param {string} areaName 
+ * @param {string} feelsLike 
+ */
 const updateHistory = (url, areaName, feelsLike) => {
     console.log("History Ran")
     const history = document.querySelector(".history")
