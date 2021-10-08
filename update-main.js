@@ -36,35 +36,38 @@ const buildMain = (url, shouldAddHistory) => {
         const dayafter = document.querySelector("#dayafter")
 
         /**
-         * A Variable that representing the searched area name
+         * A Variable representing the searched area name
          * @type {string}
          */
         const areaName = obj.nearest_area[0].areaName[0].value
 
         /**
-         * A Variable that representing the searched region
+         * A Variable representing the searched region
          * @type {string}
          */
         const region = obj.nearest_area[0].region[0].value
 
         /**
-         * A Variable that representing the searched area
+         * A Variable representing the searched area
          * @type {string}
          */
         const area = obj.nearest_area[0].areaName[0].value
 
          /**
-         * A Variable that representing the searched country
+         * A Variable representing the searched country
          * @type {string}
          */
         const country = obj.nearest_area[0].country[0].value
 
          /**
-         * A Variable that representing what the temperature feels like
+         * A Variable representing what the temperature feels like
          * @type {string}
          */
         const feelsLike = obj.current_condition[0].FeelsLikeF
 
+
+        // try destructuring for the three Today/Tomorrow/DayAfter objects in the `obj.weather` array
+        
         /**
          * @typedef {object} Title
          * @property {Element} id
