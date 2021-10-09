@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * 
  * @param {string} url - a url end point
@@ -33,7 +31,7 @@ const buildMain = (url, shouldAddHistory) => {
          * A Variable representing the html element with a id of "#dayafter"
          * @const {object}
          */
-        const dayafter = document.querySelector("#dayafter")
+        const dayAfter = document.querySelector("#dayafter")
 
         /**
          * A Variable representing the searched area name
@@ -65,8 +63,6 @@ const buildMain = (url, shouldAddHistory) => {
          */
         const feelsLike = obj.current_condition[0].FeelsLikeF
 
-
-        // try destructuring for the three Today/Tomorrow/DayAfter objects in the `obj.weather` array
         
         /**
          * @typedef {object} Title
@@ -74,32 +70,12 @@ const buildMain = (url, shouldAddHistory) => {
          * @property {string} title
          */
 
-        /**
-         * @type {Array<Title>}
-         */
-        const arr = [{id: today, title: "Today"}, {id: tomorrow, title: "Tomorrow"}, {id: dayafter, title: "Day After Tomorrow"}]
+        const arr = [{title: "Today", tag: today}, {title: "Tomorrow", tag: tomorrow}, {title: "The Day After", tag: dayAfter}]
 
-        for(let i = 0; i < 3; i++){
-            /**
-             * @type {string}
-             */
-            const avgtempF = obj.weather[i].avgtempF
-            
-            /**
-             * @type {string}
-             */
-            const maxtempF = obj.weather[i].maxtempF
 
-            /**
-             * @type {string}
-             */
-            const mintempF = obj.weather[i].mintempF
-
-            /**
-             * @type {string}
-             */
-            arr[i].id.innerHTML = `<h4>${arr[i].title}</h4><p>Average Temperature: ${avgtempF}°F</p><p>Max Temperature: ${maxtempF}°F</p><p>Min Temperature: ${mintempF}°F</p>`
-        }
+       obj.weather.forEach(({avgtempF, maxtempF, mintempF}, index) => {
+           arr[index].tag.innerHTML = `<h4>${arr[index].title}</h4><p>Average Temperature: ${avgtempF}°F</p><p>Max Temperature: ${maxtempF}°F</p><p>Min Temperature: ${mintempF}°F</p>`
+       })
 
 
         placeholder.innerHTML = `<h3>${areaName}</h3> <p>Area: ${area}</p><p>Region: ${region}</p><p>Country: ${country}</p><p>Currently: Feels like ${feelsLike}°F</p>`

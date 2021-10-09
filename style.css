@@ -20,6 +20,8 @@ main {
 
 aside {
 	margin-left: 15px;
+	height: 50%;
+	overflow: auto;
 }
 
 aside p {
