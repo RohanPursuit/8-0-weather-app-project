@@ -7,9 +7,14 @@
  * @param {string} feelsLike 
  */
 const updateHistory = (url, areaName, feelsLike) => {
-    const history = document.querySelector(".history")
-            const p = document.querySelector(".history p")
+    document.querySelector(".history p").classList.add("hidden")
         
-                p.classList.add("hidden")
-                history.innerHTML += `<a href=${url} class="block" style="display: inline-block"><li ></li>${areaName} - ${feelsLike}°F</a>`
+    const a = document.createElement('a')
+    a.setAttribute('href', url)
+    a.classList.add("listStyle")
+    a.innerHTML = `${areaName} - ${feelsLike}°F`
+
+
+    // document.querySelector(".history h5").after(a)
+    document.querySelector(".history").append(a)
 }
