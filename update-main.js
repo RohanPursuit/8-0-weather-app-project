@@ -4,8 +4,8 @@
  * @param {boolean} shouldAddHistory - whether or not to add content to the history section
  */
 
-const buildMain = (url, shouldAddHistory) => {
-    fetch(url)
+const buildMain = (location, shouldAddHistory) => {
+    fetch(`https://wttr.in/${location}?format=j1`)
     .then(response => response.json())
     .then(obj => {
 
@@ -70,7 +70,15 @@ const buildMain = (url, shouldAddHistory) => {
          * @property {string} title
          */
 
-        const arr = [{title: "Today", tag: today}, {title: "Tomorrow", tag: tomorrow}, {title: "The Day After", tag: dayAfter}]
+         const date = new Date()
+         const num = date.getDay()
+
+        
+
+         const day =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+
+        const arr = [{title: `${day[num%7]}`, tag: today}, {title: `${day[num+1%7]}`, tag: tomorrow}, {title: `${day[num+2%7]}`, tag: dayAfter}]
 
 
        obj.weather.forEach(({avgtempF, maxtempF, mintempF}, index) => {
@@ -81,10 +89,14 @@ const buildMain = (url, shouldAddHistory) => {
         placeholder.innerHTML = `<h3>${areaName}</h3> <p>Area: ${area}</p><p>Region: ${region}</p><p>Country: ${country}</p><p>Currently: Feels like ${feelsLike}°F</p>`
 
         if(shouldAddHistory){
-            updateHistory(url, areaName, feelsLike)
+            updateHistory(location, areaName, feelsLike)
         }
+        document.querySelector("aside").classList.add("addAsideHeight")
 
-        getAllLinks()
+        // getAllLinks()
+        // console.log(document.querySelector(".history a:last-child"))
+
+        document.querySelector(".history a:last-child").addEventListener("click", historyEvent)
 
         })
         .catch(console.log)

@@ -6,36 +6,35 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Weather App</title>
 		<link rel="stylesheet" href="./style.css" />
+		<script src="./history-event.js"></script>
+		<script src="./submit-event.js"></script>
 		<script src="./update-history.js"></script>
 		<script src="./update-main.js"></script>
 		<script defer src="./index.js"></script>
 	</head>
 	<body>
 		<header>
-			<section>
-				<form class="top">
-					<h1>Weather App</h1>
-					<label for="">
-						Pick Location
-						<input type="text" placeholder="Location" name="search" />
-					</label>
-					<input type="submit" value="Get Weather" />
-				</form>
-				<main class="display">
-					<section class="placeholder">
-						Choose a location to view the weather
-					</section>
-					<div>
-						<section id="today"></section>
-						<section id="tomorrow"></section>
-						<section id="dayafter"></section>
-					</div>
-				</main>
-				<aside class="history">
-					<h5>Previous Searches</h5>
-					<p>No previous searches</p>
-				</aside>
-			</section>
+			<form>
+				<h1>Weather App</h1>
+				<label for="">
+					Pick Location
+					<input type="text" placeholder="Location" name="search" />
+				</label>
+				<input type="submit" value="Get Weather" />
+			</form>
 		</header>
+		<main class="display">
+			<section class="placeholder">
+				Choose a location to view the weather
+			</section>
+			<h4>Three Day Forecast</h4>
+			<section class="forecast" id="today"></section>
+			<section class="forecast" id="tomorrow"></section>
+			<section class="forecast" id="dayafter"></section>
+		</main>
+		<aside class="history">
+			<h4 class="no-margin">Previous Searches</h4>
+			<p class="no-margin">No previous searches</p>
+		</aside>
 	</body>
 </html>

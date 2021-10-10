@@ -1,4 +1,4 @@
-// @ts-check
+
 
 /**
  * 
@@ -6,11 +6,12 @@
  * @param {string} areaName 
  * @param {string} feelsLike 
  */
-const updateHistory = (url, areaName, feelsLike) => {
+const updateHistory = (location, areaName, feelsLike) => {
     document.querySelector(".history p").classList.add("hidden")
         
     const a = document.createElement('a')
-    a.setAttribute('href', url)
+    a.setAttribute('href', '')
+    a.setAttribute('name', location)
     a.classList.add("listStyle")
     a.innerHTML = `${areaName} - ${feelsLike}°F`
 
