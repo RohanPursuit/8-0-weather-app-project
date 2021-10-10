@@ -4,8 +4,8 @@
  * @param {boolean} shouldAddHistory - whether or not to add content to the history section
  */
 
-const buildMain = (location, shouldAddHistory) => {
-    fetch(`https://wttr.in/${location}?format=j1`)
+const buildMain = (url, shouldAddHistory) => {
+    fetch(url)
     .then(response => response.json())
     .then(obj => {
 
@@ -33,29 +33,8 @@ const buildMain = (location, shouldAddHistory) => {
          */
         const dayAfter = document.querySelector("#dayafter")
 
-        /**
-         * A Variable representing the searched area name
-         * @type {string}
-         */
-        const areaName = obj.nearest_area[0].areaName[0].value
 
-        /**
-         * A Variable representing the searched region
-         * @type {string}
-         */
-        const region = obj.nearest_area[0].region[0].value
-
-        /**
-         * A Variable representing the searched area
-         * @type {string}
-         */
-        const area = obj.nearest_area[0].areaName[0].value
-
-         /**
-         * A Variable representing the searched country
-         * @type {string}
-         */
-        const country = obj.nearest_area[0].country[0].value
+        const {areaName, region, country} = obj.nearest_area[0]
 
          /**
          * A Variable representing what the temperature feels like
@@ -86,15 +65,13 @@ const buildMain = (location, shouldAddHistory) => {
        })
 
 
-        placeholder.innerHTML = `<h3>${areaName}</h3> <p>Area: ${area}</p><p>Region: ${region}</p><p>Country: ${country}</p><p>Currently: Feels like ${feelsLike}°F</p>`
+        placeholder.innerHTML = `<h3>${areaName[0].value}</h3><p>Area: ${areaName[0].value}</p><p>Region: ${region[0].value}</p><p>Country: ${country[0].value}</p><p>Currently: Feels like ${feelsLike}°F</p>`
 
         if(shouldAddHistory){
-            updateHistory(location, areaName, feelsLike)
+            updateHistory(url, areaName[0].value, feelsLike)
         }
+        
         document.querySelector("aside").classList.add("addAsideHeight")
-
-        // getAllLinks()
-        // console.log(document.querySelector(".history a:last-child"))
 
         document.querySelector(".history a:last-child").addEventListener("click", historyEvent)
 

@@ -3,9 +3,10 @@ const submitEvent = (event) => {
     * Stop the page and form refreshing/reloading
     */
      event.preventDefault()
- 
+    
+    const url = `https://wttr.in/${event.target.search.value}?format=j1`
 
-     buildMain(event.target.search.value, true)        
+     buildMain(url, true)        
  
      event.target.reset()
 }
