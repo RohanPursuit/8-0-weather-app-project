@@ -5,3 +5,11 @@ document.querySelector('form')
 .addEventListener('submit', submitEvent)
 
 
+
+
+/** ----------------------------------------------- */
+const settings = {
+    init: "nothing",
+    display: "none",
+    dayWordLength: 3,
+}

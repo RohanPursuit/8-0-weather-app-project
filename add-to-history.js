@@ -14,7 +14,10 @@ const updateHistory = (url, areaName, feelsLike) => {
     a.classList.add("listStyle")
     a.innerHTML = `${areaName} - ${feelsLike}°F`
 
+    document.querySelector(".display h4").classList.remove("hidden")
 
     // document.querySelector(".history h5").after(a)
     document.querySelector(".history").append(a)
 }
+
+

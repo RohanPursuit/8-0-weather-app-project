@@ -1,6 +1,5 @@
 /* ------------------GRID------------------- */
 body {
-	/* border: 1px solid black; */
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -49,11 +48,8 @@ form {
 	grid-column: 1/4;
 }
 
-div {
-	grid-column: 1/4;
-}
-
 .forecast {
+	/* border: 1px solid #000; */
 	text-align: center;
 }
 
