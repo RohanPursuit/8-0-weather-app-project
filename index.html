@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Weather App</title>
 		<link rel="stylesheet" href="./style.css" />
+		<script defer src="./themes.js"></script>
 		<script src="./history-event.js"></script>
 		<script src="./submit-event.js"></script>
 		<script src="./add-to-history.js"></script>
@@ -27,14 +28,21 @@
 			<section class="placeholder">
 				Choose a location to view the weather
 			</section>
-			<h4 class="hidden">Three Day Forecast</h4>
-			<section class="forecast" id="today"></section>
-			<section class="forecast" id="tomorrow"></section>
-			<section class="forecast" id="dayafter"></section>
+			<div>
+				<h4 class="hidden">Three Day Forecast</h4>
+				<section class="forecast" id="today"></section>
+				<section class="forecast" id="tomorrow"></section>
+				<section class="forecast" id="dayafter"></section>
+			</div>
 		</main>
 		<aside class="history">
 			<h4 class="no-margin">Previous Searches</h4>
 			<p class="no-margin">No previous searches</p>
+		</aside>
+		<aside class="themes">
+			<button name="default"></button>
+			<button name="two-grid"></button>
+			<button name="minimal"></button>
 		</aside>
 	</body>
 </html>

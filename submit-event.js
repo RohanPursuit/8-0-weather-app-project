@@ -6,7 +6,9 @@ const submitEvent = (event) => {
     
     const url = `https://wttr.in/${event.target.search.value}?format=j1`
 
-     buildMain(url, true)        
- 
+     buildMain(url, true)
+
+    
+
      event.target.reset()
 }

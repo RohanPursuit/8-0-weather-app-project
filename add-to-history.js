@@ -11,6 +11,7 @@ const updateHistory = (url, areaName, feelsLike) => {
         
     const a = document.createElement('a')
     a.setAttribute('href', url)
+    // a.setAttribute("style", "text-align: center;")
     a.classList.add("listStyle")
     a.innerHTML = `${areaName} - ${feelsLike}°F`
 

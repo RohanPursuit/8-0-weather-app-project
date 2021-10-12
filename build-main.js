@@ -57,11 +57,11 @@ const buildMain = (url, shouldAddHistory) => {
          const day =["Sunday ", "Monday ", "Tuesday ", "Wednesday ", "Thursday ", "Friday ", "Saturday "]
 
 
-        const arr = [{title: `${day[num%7].slice(0, settings.dayWordLength)}`, tag: today}, {title: `${day[num+1%7].slice(0, settings.dayWordLength)}`, tag: tomorrow}, {title: `${day[num+2%7].slice(0, settings.dayWordLength)}`, tag: dayAfter}]
+        const arr = [{title: `${day[num%7]}`, tag: today}, {title: `${day[num+1%7]}`, tag: tomorrow}, {title: `${day[num+2%7]}`, tag: dayAfter}]
 
 
        obj.weather.forEach(({avgtempF, maxtempF, mintempF}, index) => {
-           arr[index].tag.innerHTML = `<h4>${arr[index].title}</h4><p>Average Temperature: ${avgtempF}°F</p><p>Max Temperature: ${maxtempF}°F</p><p>Min Temperature: ${mintempF}°F</p>`
+           arr[index].tag.innerHTML = `<span>${arr[index].title}</span> <span>${avgtempF}°</span> <span class="end">${maxtempF}°/${mintempF}°F</span>`
        })
 
 
